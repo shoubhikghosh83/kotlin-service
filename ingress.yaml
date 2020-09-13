@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: kotlin-service-ingress
+ annotations:
+  kubernetes.io/ingress.class: addon-http-application-routing
+  nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+ rules:
+ - host: srt-aks-dns-43f35057.hcp.westeurope.azmk8s.io 
+   http:
+    paths:
+    - path: /sb
+      backend:
+       serviceName: kotlin-service
+       servicePort: 8080
