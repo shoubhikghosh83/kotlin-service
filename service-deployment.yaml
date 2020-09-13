@@ -29,6 +29,6 @@ metadata:
 spec:
   selector:
     app: kotlin-service
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 8080
