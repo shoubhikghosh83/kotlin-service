@@ -1,13 +1,13 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
- name: kotlin-service-ingress
+ name: kotlin-service
  annotations:
   kubernetes.io/ingress.class: addon-http-application-routing
   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
  rules:
- - host: kotlin-service-ingress.c47e179c12b340ceb13b.westeurope.aksapp.io 
+ - host: kotlin-service.c47e179c12b340ceb13b.westeurope.aksapp.io 
    http:
     paths:
     - path: /sb
