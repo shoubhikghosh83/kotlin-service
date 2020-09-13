@@ -7,7 +7,7 @@ metadata:
   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
  rules:
- - host: srt-aks-dns-43f35057.hcp.westeurope.azmk8s.io 
+ - host: kotlin-service-ingress.c47e179c12b340ceb13b.westeurope.aksapp.io 
    http:
     paths:
     - path: /sb
