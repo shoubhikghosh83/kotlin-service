@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: micronaut-kotlin-service
+  name: kotlin-service
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: micronaut-kotlin-service
+      app: kotlin-service
   template:
     metadata:
       labels:
-        app: micronaut-kotlin-service
+        app: kotlin-service
     spec:
       containers:
-        - name: micronaut-kotlin-service
-          image: shoubhikghosh83/micronaut-kotlin-service:latest
+        - name: kotlin-service
+          image: shoubhikghosh83/kotlin-service:latest
           imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: 8092
+              containerPort: 8091
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: micronaut-kotlin-service
+  name: kotlin-service
   labels:
-    app: micronaut-kotlin-service
+    app: kotlin-service
 spec:
   selector:
-    app: micronaut-kotlin-service
+    app: kotlin-service
   type: LoadBalancer
   ports:
     - port: 8080
-      targetPort: 8092
+      targetPort: 8091
